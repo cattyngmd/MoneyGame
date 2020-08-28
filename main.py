@@ -6,7 +6,7 @@ from colorama import init, Fore, Back, Style
 colorama.init()
 
 name = "Money Mod game"
-ver = "beta 0.2"
+ver = "beta 0.2.1"
 
 bal = 0
 
@@ -142,7 +142,7 @@ if selmain == 1:
 
 			randHealth = random.randint(2, 9)
 			randWeak = random.randint(2, 9)
-			trata = random.randint(0, 250)
+			trata = random.randint(40, 250)
 
 			randLLIaHc = random.randint(1,15)
 			smert(randLLIaHc)
