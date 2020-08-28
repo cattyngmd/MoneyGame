@@ -1,2 +1,4 @@
 # MoneyGame
-Money Money Money Money Money Money 
+SUPER MONEY GAME
+
+
