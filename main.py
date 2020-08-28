@@ -89,6 +89,7 @@ if selmain == 1:
 				time.sleep(5)
 			else:
 				print("| У тебя нет денег ИДИОТ")
+				time.sleep(5)
 
 		elif select == 2:
 			os.system('cls' if os.name == 'nt' else 'clear')
