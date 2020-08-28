@@ -6,7 +6,7 @@ from colorama import init, Fore, Back, Style
 colorama.init()
 
 name = "Money Mod game"
-ver = "beta 0.1"
+ver = "beta 0.2"
 
 bal = 0
 
