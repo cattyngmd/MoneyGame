@@ -8,7 +8,7 @@ colorama.init()
 name = "Money Mod game"
 ver = "beta 0.2.4"
 
-bal = 11110
+bal = 0
 
 selectmain = 0
 select = 0
