@@ -168,7 +168,7 @@ if selmain == 1:
 					print("| Ваш баланс ушел в минус. ГЕЙМ ОВЕР")
 					time.sleep(5)
 				else:
-					print("| " + str(portal()) + "$ вы заработали в портале.\n| Игра пройдена!!!\n| Credits:\n| rockezzergon\n")
+					print("| " + str(portal()) + "$ вы заработали в портале.\n| Игра пройдена!!!\n| Credits:\n| Cattyn\n")
 					time.sleep(10)
 					exit()
 
