@@ -25,9 +25,9 @@ JUMP_RESET:
 	CLEAR( );
 
 	PRINT( "| Welcome to the " GAMENAME " [" GAMEVERSION "]\n" );
-	PRINT( "| 1. Íà÷àòü íîâóþ èãðó\n" );
-	PRINT( "| 2. Íàñòðîéêè ãðàôèêè\n" );
-	PRINT( "| 3. Âûéòè\n" );
+	PRINT( "| 1. ÐÐ°Ñ‡Ð°Ñ‚ÑŒ Ð½Ð¾Ð²ÑƒÑŽ Ð¸Ð³Ñ€Ñƒ\n" );
+	PRINT( "| 2. ÐÐ°ÑÑ‚Ñ€Ð¾Ð¹ÐºÐ¸ Ð³Ñ€Ð°Ñ„Ð¸ÐºÐ¸\n" );
+	PRINT( "| 3. Ð’Ñ‹Ð¹Ñ‚Ð¸\n" );
 
 	PRINT( "| > " );
 	choice = utils::GetUserInput( );
@@ -42,10 +42,10 @@ JUMP_RESET:
 		goto JUMP_RESET;
 
 JUMP_NEWGAMEOPTION:
-	PRINT( "| Âûáåðè ñëîæíîñòü\n" );
-	PRINT( "| 1. Ëåãêàÿ\n" );
-	PRINT( "| 2. Ñðåäíÿÿ\n" );
-	PRINT( "| 3. Ñëîæíàÿ\n" );
+	PRINT( "| Ð’Ñ‹Ð±ÐµÑ€Ð¸ ÑÐ»Ð¾Ð¶Ð½Ð¾ÑÑ‚ÑŒ\n" );
+	PRINT( "| 1. Ð›ÐµÐ³ÐºÐ°Ñ\n" );
+	PRINT( "| 2. Ð¡Ñ€ÐµÐ´Ð½ÑÑ\n" );
+	PRINT( "| 3. Ð¡Ð»Ð¾Ð¶Ð½Ð°Ñ\n" );
 
 	PRINT( "| > " );
 
@@ -65,19 +65,19 @@ JUMP_GAME:
 	CLEAR( );
 	if( player->health <= 0 )
 	{
-		PRINTCOLORED( 12, "| òû óìåð îò áàëåçíè....\n" );
+		PRINTCOLORED( 12, "| Ñ‚Ñ‹ ÑƒÐ¼ÐµÑ€ Ð¾Ñ‚ Ð±Ð°Ð»ÐµÐ·Ð½Ð¸....\n" );
 		utils::Sleep( 3 );
 		goto JUMP_EXIT;
 	}
 	else if( player->hunger <= 0 )
 	{
-		PRINTCOLORED( 12, "| òû óìåð îò ãîëàäà....\n" );
+		PRINTCOLORED( 12, "| Ñ‚Ñ‹ ÑƒÐ¼ÐµÑ€ Ð¾Ñ‚ Ð³Ð¾Ð»Ð°Ð´Ð°....\n" );
 		utils::Sleep( 3 );
 		goto JUMP_EXIT;
 	}
 	else if( player->weakness >= 10 )
 	{
-		PRINTCOLORED( 12, "| òû óìåð îò òàãî ÷òî ïóïîê ïîðâàëñÿ....\n" );
+		PRINTCOLORED( 12, "| Ñ‚Ñ‹ ÑƒÐ¼ÐµÑ€ Ð¾Ñ‚ Ñ‚Ð°Ð³Ð¾ Ñ‡Ñ‚Ð¾ Ð¿ÑƒÐ¿Ð¾Ðº Ð¿Ð¾Ñ€Ð²Ð°Ð»ÑÑ....\n" );
 		utils::Sleep( 3 );
 		goto JUMP_EXIT;
 	}
@@ -93,23 +93,23 @@ JUMP_GAME:
 		player->weakness = 0;
 
 	// what the FUCK
-	PRINT( "| Âàøà ñòàòèñòèêà:\n" );
+	PRINT( "| Ð’Ð°ÑˆÐ° ÑÑ‚Ð°Ñ‚Ð¸ÑÑ‚Ð¸ÐºÐ°:\n" );
 	PRINT( "| " );
-	PRINTCOLORED( 12, "%d Çäîðîâüÿ ", player->health );
+	PRINTCOLORED( 12, "%d Ð—Ð´Ð¾Ñ€Ð¾Ð²ÑŒÑ ", player->health );
 	PRINT( "| " );
-	PRINTCOLORED( 10, "%d Ñûòîñòè ", player->hunger );
+	PRINTCOLORED( 10, "%d Ð¡Ñ‹Ñ‚Ð¾ÑÑ‚Ð¸ ", player->hunger );
 	PRINT( "| " );
-	PRINTCOLORED( 11, "%d Óñòàëîñòè ", player->weakness );
-	PRINT( "| Áàëàíñ %d$\n", player->balance );
+	PRINTCOLORED( 11, "%d Ð£ÑÑ‚Ð°Ð»Ð¾ÑÑ‚Ð¸ ", player->weakness );
+	PRINT( "| Ð‘Ð°Ð»Ð°Ð½Ñ %d$\n", player->balance );
 	PRINT( "| ---------------------------\n" );
 
-	PRINT( "| Âûáåðè îäèí èç âàðèàíòîâ:\n" );
-	PRINT( "| 1. Ïîéòè â ìàãàç\n" );
-	PRINT( "| 2. Ïîéòè íà ðàáîòà\n" );
-	PRINT( "| 3. Ïîéòè íà ñîí\n" );
-	PRINT( "| 4. Âûéòè â îêíî\n" );
-	PRINT( "| 5. Ïîéòè â àïòåêà\n" );
-	PRINT( "| 6. Îòêðûòü ïîðòàë â ìèð çàðàáîòêà (%d$)\n", difficulty::Portal( intdifficulty ) );
+	PRINT( "| Ð’Ñ‹Ð±ÐµÑ€Ð¸ Ð¾Ð´Ð¸Ð½ Ð¸Ð· Ð²Ð°Ñ€Ð¸Ð°Ð½Ñ‚Ð¾Ð²:\n" );
+	PRINT( "| 1. ÐŸÐ¾Ð¹Ñ‚Ð¸ Ð² Ð¼Ð°Ð³Ð°Ð·\n" );
+	PRINT( "| 2. ÐŸÐ¾Ð¹Ñ‚Ð¸ Ð½Ð° Ñ€Ð°Ð±Ð¾Ñ‚Ð°\n" );
+	PRINT( "| 3. ÐŸÐ¾Ð¹Ñ‚Ð¸ Ð½Ð° ÑÐ¾Ð½\n" );
+	PRINT( "| 4. Ð’Ñ‹Ð¹Ñ‚Ð¸ Ð² Ð¾ÐºÐ½Ð¾\n" );
+	PRINT( "| 5. ÐŸÐ¾Ð¹Ñ‚Ð¸ Ð² Ð°Ð¿Ñ‚ÐµÐºÐ°\n" );
+	PRINT( "| 6. ÐžÑ‚ÐºÑ€Ñ‹Ñ‚ÑŒ Ð¿Ð¾Ñ€Ñ‚Ð°Ð» Ð² Ð¼Ð¸Ñ€ Ð·Ð°Ñ€Ð°Ð±Ð¾Ñ‚ÐºÐ° (%d$)\n", difficulty::Portal( intdifficulty ) );
 
 	choice = utils::GetUserInput( );
 
@@ -133,11 +133,11 @@ JUMP_GAME:
 			player->hunger += hunger;
 			player->weakness += weakness;
 
-			PRINT( "| Âû ïîøëè â ìàãàç è ïîòðàòèëè %d$\n", moneyspent );
-			PRINT( "| Âàø áàëàíñ òåïåðü: %d$\n", player->balance );
+			PRINT( "| Ð’Ñ‹ Ð¿Ð¾ÑˆÐ»Ð¸ Ð² Ð¼Ð°Ð³Ð°Ð· Ð¸ Ð¿Ð¾Ñ‚Ñ€Ð°Ñ‚Ð¸Ð»Ð¸ %d$\n", moneyspent );
+			PRINT( "| Ð’Ð°Ñˆ Ð±Ð°Ð»Ð°Ð½Ñ Ñ‚ÐµÐ¿ÐµÑ€ÑŒ: %d$\n", player->balance );
 		}
 		else
-			PRINT( "| Ó òåáÿ íåò äåíåã ÈÄÈÎÒ" );
+			PRINT( "| Ð£ Ñ‚ÐµÐ±Ñ Ð½ÐµÑ‚ Ð´ÐµÐ½ÐµÐ³ Ð˜Ð”Ð˜ÐžÐ¢" );
 	}
 	else if( choice == "2" )
 	{
@@ -151,7 +151,7 @@ JUMP_GAME:
 		int weakness = utils::RandomInt( difficulty::MinWorkWeakness( intdifficulty ), difficulty::MaxWorkWeakness( intdifficulty ) );
 		int health = utils::RandomInt( 2, difficulty::WorkHealth( intdifficulty ) );
 
-		PRINT( "| Âû ðàáîòàåòå...\n" );
+		PRINT( "| Ð’Ñ‹ Ñ€Ð°Ð±Ð¾Ñ‚Ð°ÐµÑ‚Ðµ...\n" );
 		utils::Sleep( time );
 
 		player->balance += salary;
@@ -159,8 +159,8 @@ JUMP_GAME:
 		player->hunger -= hunger;
 		player->weakness += weakness;
 
-		PRINT( "| Âû ïîðàáîòàëè %d ÷àñîâ, âû çàðàáîòàëè %d$\n", time, salary );
-		PRINT( "| Âàø áàëàíñ: %d$\n", player->balance );
+		PRINT( "| Ð’Ñ‹ Ð¿Ð¾Ñ€Ð°Ð±Ð¾Ñ‚Ð°Ð»Ð¸ %d Ñ‡Ð°ÑÐ¾Ð², Ð²Ñ‹ Ð·Ð°Ñ€Ð°Ð±Ð¾Ñ‚Ð°Ð»Ð¸ %d$\n", time, salary );
+		PRINT( "| Ð’Ð°Ñˆ Ð±Ð°Ð»Ð°Ð½Ñ: %d$\n", player->balance );
 	}
 	else if( choice == "3" )
 	{
@@ -175,29 +175,29 @@ JUMP_GAME:
 			? 3
 			: utils::RandomInt( 2, difficulty::SleepHunger( intdifficulty ) );
 
-		PRINT( "| Âû ñïèòå... ZZZzzzzzzzz...\n" );
+		PRINT( "| Ð’Ñ‹ ÑÐ¿Ð¸Ñ‚Ðµ... ZZZzzzzzzzz...\n" );
 		utils::Sleep( time );
 
 		player->weakness -= weakness;
 		player->hunger -= hunger;
 
-		PRINT( "| Âû ïîñïàëè %d ÷àñîâ! Òåïåðü âàøà óñòàëîñòü óìåíüøåíà íà - %d\n", time, weakness );
+		PRINT( "| Ð’Ñ‹ Ð¿Ð¾ÑÐ¿Ð°Ð»Ð¸ %d Ñ‡Ð°ÑÐ¾Ð²! Ð¢ÐµÐ¿ÐµÑ€ÑŒ Ð²Ð°ÑˆÐ° ÑƒÑÑ‚Ð°Ð»Ð¾ÑÑ‚ÑŒ ÑƒÐ¼ÐµÐ½ÑŒÑˆÐµÐ½Ð° Ð½Ð° - %d\n", time, weakness );
 	}
 	else if( choice == "4" )
 	{
 		if( intdifficulty == 1 )
 		{
-			PRINTCOLORED( 13, "| Âû òî÷íî õîòèòå âûéòè â îêíî?\n" );
-			PRINT( "| Äà ---------------------- Íåò\n" );
+			PRINTCOLORED( 13, "| Ð’Ñ‹ Ñ‚Ð¾Ñ‡Ð½Ð¾ Ñ…Ð¾Ñ‚Ð¸Ñ‚Ðµ Ð²Ñ‹Ð¹Ñ‚Ð¸ Ð² Ð¾ÐºÐ½Ð¾?\n" );
+			PRINT( "| Ð”Ð° ---------------------- ÐÐµÑ‚\n" );
 
 			choice = utils::GetUserInput( );
-			if( choice == "Äà" )
+			if( choice == "Ð”Ð°" )
 				PRINTCOLORED( 10, "GET STICK BUGGED LOL\n" );
 			else
-				PRINTCOLORED( 13, "| ãåéì îâåð..\n" );
+				PRINTCOLORED( 13, "| Ð³ÐµÐ¹Ð¼ Ð¾Ð²ÐµÑ€..\n" );
 		}
 		else
-			PRINTCOLORED( 13, "| ãåéì îâåð..\n" );
+			PRINTCOLORED( 13, "| Ð³ÐµÐ¹Ð¼ Ð¾Ð²ÐµÑ€..\n" );
 
 		utils::Sleep( 5 );
 		goto JUMP_EXIT;
@@ -220,27 +220,27 @@ JUMP_GAME:
 		player->health += health;
 		player->weakness += weakness;
 
-		PRINT( "| Âû èäåòå â àïòåêó\n" );
+		PRINT( "| Ð’Ñ‹ Ð¸Ð´ÐµÑ‚Ðµ Ð² Ð°Ð¿Ñ‚ÐµÐºÑƒ\n" );
 		utils::Sleep( 2 );
-		PRINT( "| Âû ñõîäèëè â àïòåêó è ïîòðàòèëè %d$, è âûëå÷èëè ñåáÿ.\n", moneyspent );
+		PRINT( "| Ð’Ñ‹ ÑÑ…Ð¾Ð´Ð¸Ð»Ð¸ Ð² Ð°Ð¿Ñ‚ÐµÐºÑƒ Ð¸ Ð¿Ð¾Ñ‚Ñ€Ð°Ñ‚Ð¸Ð»Ð¸ %d$, Ð¸ Ð²Ñ‹Ð»ÐµÑ‡Ð¸Ð»Ð¸ ÑÐµÐ±Ñ.\n", moneyspent );
 	}
 	else if( choice == "6" )
 	{
 		if( player->balance < difficulty::Portal( intdifficulty ) )
-			PRINT( "| Íåäîñòàòî÷íî äåíåã ÷òîáû âîéòè â ïîðòàë ìèðà äåíåã." );
+			PRINT( "| ÐÐµÐ´Ð¾ÑÑ‚Ð°Ñ‚Ð¾Ñ‡Ð½Ð¾ Ð´ÐµÐ½ÐµÐ³ Ñ‡Ñ‚Ð¾Ð±Ñ‹ Ð²Ð¾Ð¹Ñ‚Ð¸ Ð² Ð¿Ð¾Ñ€Ñ‚Ð°Ð» Ð¼Ð¸Ñ€Ð° Ð´ÐµÐ½ÐµÐ³." );
 		else
 		{
 			// i just took a big shit
 			int portal = ( player->balance * 420 + player->weakness - player->hunger * 2 ) * player->health;
 			if( portal < 0 )
 			{
-				PRINT( "| Âàø áàëàíñ óøåë â ìèíóñ. ÃÅÉÌ ÎÂÅÐ\n" );
+				PRINT( "| Ð’Ð°Ñˆ Ð±Ð°Ð»Ð°Ð½Ñ ÑƒÑˆÐµÐ» Ð² Ð¼Ð¸Ð½ÑƒÑ. Ð“Ð•Ð™Ðœ ÐžÐ’Ð•Ð \n" );
 				utils::Sleep( 5 );
 				goto JUMP_EXIT;
 			}
 			else
 			{
-				PRINT( "| %d$ âû çàðàáîòàëè â ïîðòàëå.\n", portal );
+				PRINT( "| %d$ Ð²Ñ‹ Ð·Ð°Ñ€Ð°Ð±Ð¾Ñ‚Ð°Ð»Ð¸ Ð² Ð¿Ð¾Ñ€Ñ‚Ð°Ð»Ðµ.\n", portal );
 				PRINT( "| Credits:\n" );
 				PRINT( "| Cattyn\n" );
 				PRINT( "| myrh\n" );
