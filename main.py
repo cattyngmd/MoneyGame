@@ -17,7 +17,7 @@ health = 10
 hunger = 10
 weak = 0
 
-deathMsgs = ["| Вас укусила пчола и вы все.... гейм овер", "| Тебя зарезал тажик. гейм овер", "| Вам на голову упала беременная мать с 1337 этажа. гейм овер", "| приве) гейм овер", "| Вас застрелил спецна....з.. гейм овер", "| вы встрелии мишу стука", "| вы встретили рокеза"]
+deathMsgs = ["| Вас укусила пчола и вы все.... гейм овер", "| Тебя зарезал тажик. гейм овер", "| Вам на голову упала беременная мать с 1337 этажа. гейм овер", "| приве) гейм овер", "| Вас застрелил спецна....з.. гейм овер", "| вы встретили мишу стука", "| вас встретил рокез"]
 
 def portal():
 	result = (bal*420+weak-hunger*2)*health
@@ -25,7 +25,7 @@ def portal():
 
 def smert(x):
 	if x == 5:
-		randomDeath = random.randint(0, 6)
+		randomDeath = random.randint(0, 4)
 		print(Fore.RED + deathMsgs[randomDeath])
 		time.sleep(10)
 		exit()
@@ -46,7 +46,7 @@ if selmain == 1:
 				time.sleep(3)
 				exit()
 			elif hunger <= 0:
-				print(Fore.RED + "| ты умер от голода....")
+				print(Fore.RED + "| ты умер от голада....")
 				time.sleep(3)
 				exit()
 			elif weak >= 10:
@@ -68,7 +68,7 @@ if selmain == 1:
 			select = int(input("| > "))
 		except ValueError:
 			print("")
-		
+
 		if select == 1:
 			if bal > 0:
 				os.system('cls' if os.name == 'nt' else 'clear')
@@ -81,7 +81,7 @@ if selmain == 1:
 				if trata > bal:
 					trata = bal
 				bal -= trata
-				
+
 				hunger += randHunger
 				weak += randWeak
 
@@ -110,7 +110,7 @@ if selmain == 1:
 			weak += randWeak
 
 			print("| Вы поработали " + str(randtime) + " часов, вы заработали " + str(randIIpu6blLb) + "$\n| Ваш баланс: " + str(bal) + "$")
-				
+
 			time.sleep(5)
 
 		elif select == 3:
@@ -150,7 +150,7 @@ if selmain == 1:
 			if trata > bal:
 				trata = bal
 			bal -= trata
-				
+
 			health += randHealth
 			weak += randWeak
 			print("| Вы идете в аптеку")
@@ -168,7 +168,7 @@ if selmain == 1:
 					print("| Ваш баланс ушел в минус. ГЕЙМ ОВЕР")
 					time.sleep(5)
 				else:
-					print("| " + str(portal()) + "$ вы заработали в портале.\n| Игра пройдена!!!\n| Credits:\n| rockezzergon\n")
+					print("| " + str(portal()) + "$ вы заработали в портале.\n| Игра пройдена!!!\n| Credits:\n| Cattyn\n")
 					time.sleep(10)
 					exit()
 
