@@ -461,3 +461,4 @@ if selmain == 1:
 		exit()
 
 	input("")
+input("")
