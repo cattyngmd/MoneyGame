@@ -54,7 +54,7 @@ if selmain == 1:
 					time.sleep(3)
 					exit()
 				elif weak >= 10:
-					print(Fore.RED + "| ты умер от таго что не смог держать груз на работе....")
+					print(Fore.RED + "| ты умер от таго что пупок порвался....")
 					time.sleep(3)
 					exit()
 
@@ -196,7 +196,7 @@ if selmain == 1:
 					time.sleep(3)
 					exit()
 				elif weak >= 10:
-					print(Fore.RED + "| ты умер от таго что не смог держать груз на работе....")
+					print(Fore.RED + "| ты умер от таго что пупок порвался....")
 					time.sleep(3)
 					exit()
 
@@ -330,7 +330,7 @@ if selmain == 1:
 					time.sleep(3)
 					exit()
 				elif weak >= 10:
-					print(Fore.RED + "| ты умер от таго что не смог держать груз на работе....")
+					print(Fore.RED + "| ты умер от таго что пупок порвался....")
 					time.sleep(3)
 					exit()
 
